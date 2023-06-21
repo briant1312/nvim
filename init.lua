@@ -73,7 +73,8 @@ require('lazy').setup({
   'tpope/vim-sleuth',
 
   -- my plugins
-    'maxmellon/vim-jsx-pretty',
+  'maxmellon/vim-jsx-pretty',
+  'numToStr/Comment.nvim',
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -208,6 +209,19 @@ require('lazy').setup({
    { import = 'custom.plugins' },
 }, {})
 
+require('onedark').setup {
+  transparent = true,
+}
+
+require('Comment').setup {
+  toggler = {
+    line = '<C-/>'
+  },
+  opleader = {
+    line = '<C-/>'
+  }
+}
+
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
@@ -284,10 +298,12 @@ vim.keymap.set('n', '<leader>i', 'i<Space><Esc>')
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set('n', '<leader>n', ':Neotree <CR>')
+vim.keymap.set('n', '<leader>N', ':Neotree close <CR>')
 vim.keymap.set('n', '<leader>wh', '<C-w>h')
 vim.keymap.set('n', '<leader>wj', '<C-w>j')
 vim.keymap.set('n', '<leader>wk', '<C-w>k')
 vim.keymap.set('n', '<leader>wl', '<C-w>l')
+vim.keymap.set('i', '<C-e>', '<Esc>A')
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`

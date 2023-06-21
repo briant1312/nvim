@@ -76,6 +76,7 @@ require('lazy').setup({
   'maxmellon/vim-jsx-pretty',
   'numToStr/Comment.nvim',
   'abecodes/tabout.nvim',
+  'windwp/nvim-ts-autotag',
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -222,6 +223,8 @@ require('Comment').setup {
     line = '<C-/>'
   }
 }
+
+require('nvim-ts-autotag').setup {}
 
 -- [[ Setting options ]]
 -- See `:help vim.o`

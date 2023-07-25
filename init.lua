@@ -75,7 +75,6 @@ require('lazy').setup({
   -- my plugins
   'maxmellon/vim-jsx-pretty',
   'numToStr/Comment.nvim',
-  'abecodes/tabout.nvim',
   'windwp/nvim-ts-autotag',
 
   -- NOTE: This is where your plugins related to LSP can be installed.
@@ -562,8 +561,6 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
-
-require('tabout').setup {}
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

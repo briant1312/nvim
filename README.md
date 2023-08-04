@@ -17,8 +17,8 @@
 ## Extra plugins that I installed
 - maxmellon/vim-jsx-pretty
 - numToStr/Comment.nvim
-- abecodes/tabout.nvim
 - windwp/nvim-ts-autotag
+- folke/tokyonight.nvim
 
 ## Language servers installed through Mason
 - css-lsp
@@ -32,3 +32,6 @@
 - prettier
 - python-lsp-server
 - typescript-language-server
+- debugpy
+- djlint
+- node-debug2-adapter

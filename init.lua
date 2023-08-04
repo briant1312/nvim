@@ -279,6 +279,24 @@ vim.keymap.set('n', '<leader>wj', '<C-w>j')
 vim.keymap.set('n', '<leader>wk', '<C-w>k')
 vim.keymap.set('n', '<leader>wl', '<C-w>l')
 vim.keymap.set('i', '<C-e>', '<Esc>A')
+vim.keymap.set('n', '<leader>x', function()
+  local fileName = vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf())
+  for str in string.gmatch(fileName, "[^.]+$") do
+        if(str == "js") then
+            vim.api.nvim_command(":w")
+            print("\n")
+            vim.api.nvim_command(":w !node")
+        elseif (str == "py") then
+            vim.api.nvim_command(":w")
+            print("\n")
+            vim.api.nvim_command(":w !python3")
+        else
+            vim.api.nvim_command(":w")
+            print("\n")
+            vim.api.nvim_command(":source %")
+        end
+    end
+end)
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -318,7 +336,9 @@ pcall(require('telescope').load_extension, 'fzf')
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader><space>', function()
+  require('telescope.builtin').buffers { initial_mode = "normal" }
+  end, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {

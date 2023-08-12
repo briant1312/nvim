@@ -35,3 +35,9 @@
 - debugpy
 - djlint
 - node-debug2-adapter
+
+## If you are working with vue files you will need to run the following commands in neovim
+```
+TSInstall vue
+TSInstall css
+```

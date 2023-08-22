@@ -39,6 +39,8 @@ require('lazy').setup({
   'maxmellon/vim-jsx-pretty',
   'numToStr/Comment.nvim',
   'windwp/nvim-ts-autotag',
+  'NvChad/nvim-colorizer.lua',
+  'KabbAmine/vCoolor.vim',
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -198,6 +200,8 @@ require('Comment').setup {
 
 require('nvim-ts-autotag').setup {}
 
+require('colorizer').setup {}
+
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
@@ -265,6 +269,7 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- these are remaps that I have made 
+vim.keymap.set('n', '<leader>cp', ':VCoolor <CR>')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set("x", "<leader>p", "\"_dP")

@@ -295,6 +295,10 @@ vim.keymap.set('n', '<leader>x', function()
             vim.api.nvim_command(":w")
             print("\n")
             vim.api.nvim_command(":w !python3")
+        elseif (str == "go") then
+            vim.api.nvim_command(":w")
+            print("\n")
+            vim.api.nvim_command(":w !go run %")
         else
             vim.api.nvim_command(":w")
             print("\n")
